@@ -75,25 +75,29 @@ const App = () => {
       });
   };
 
+  
+
   const weatherDetails = (info) => {
     const { name: city, sys: { country }, weather, main: { temp, feels_like, humidity } } = info;
     const { description, id } = weather[0];
     let iconSrc = "";
 
-    if (id === 800) {
-      iconSrc = { clear };
+    
+    if (id == 800) {
+      iconSrc = clear ;
     } else if (id >= 200 && id <= 232) {
-      iconSrc = { storm };
+      iconSrc = storm ;
     } else if (id >= 600 && id <= 622) {
-      iconSrc = { snow };
+      iconSrc = snow ;
     } else if (id >= 701 && id <= 781) {
-      iconSrc = { haze };
+      iconSrc =  haze ;
     } else if (id >= 801 && id <= 804) {
-      iconSrc = { cloud };
+      iconSrc = cloud ;
     } else if ((id >= 500 && id <= 531) || (id >= 300 && id <= 321)) {
-      iconSrc = { rain };
+      iconSrc =  rain ;
     }
-
+    
+    
     setWeatherData({
       temp: Math.floor(temp),
       feels_like: Math.floor(feels_like),
@@ -105,11 +109,11 @@ const App = () => {
     });
     setInfoText("");
   };
+ 
 
   return (
     <div className={`wrapper ${weatherData ? "active" : ""}`}>
       <header><i className='bx bx-left-arrow-alt'></i>Weather App</header>
-
       <section className="input-part">
         <p className={`info-txt ${error ? "error" : isPending ? "pending" : ""}`}>{infoText}</p>
         <div className="content">
