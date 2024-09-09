@@ -235,3 +235,26 @@ header i {
 .humidity i {
   font-size: 37px;
 }
+
+
+
+@media (max-width: 575px) {
+  .wrapper{
+    width: auto;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .wrapper header{
+    padding: 15px 10px;
+  }
+
+  .weather-part .weather{
+    font-size: 15px;
+  }
+
+  .column .details p{
+    font-size: 13px;
+  }
+}

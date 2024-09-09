@@ -16,6 +16,7 @@ const App = () => {
   const [infoText, setInfoText] = useState("");
   const [error, setError] = useState(false);
   const [isPending, setIsPending] = useState(false);
+  // const [arrowBack, setArrowBack] = useState();
 
   const apiKey = "a07c7793169c3b7171c260ca5b9e3667";
 
@@ -109,12 +110,20 @@ const App = () => {
       icon: iconSrc,
     });
     setInfoText("");
+    console.log(arrowBack);
+    
+    arrowBack.onClick = () => {
+      alert("gj")
+    }
+    arrowBack.addEventListener("click", () => {
+    })
   };
- 
+
+  
 
   return (
     <div className={`wrapper ${weatherData ? "active" : ""}`}>
-      <header><i className='bx bx-left-arrow-alt'></i>Weather App</header>
+      <header><i className='bx bx-left-arrow-alt' onClick={() =>  weatherData.getDeviceLocation(isPending)}></i>Weather App</header>
       <section className="input-part">
         <p className={`info-txt ${error ? "error" : isPending ? "pending" : ""}`}>{infoText}</p>
         <div className="content">
@@ -152,7 +161,7 @@ const App = () => {
                   <span className="numb-2">{weatherData.feels_like}</span>
                   <span className="deg">°</span>C
                 </div>
-                <p>Feels like</p>
+                <p>  like</p>
               </div>
             </div>
             <div className="column humidity">
