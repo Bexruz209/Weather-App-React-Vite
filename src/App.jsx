@@ -28,6 +28,7 @@ const App = () => {
       requestApi(city);
     }
   };
+  
 
   const requestApi = (city) => {
     const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
